@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+
+
+<settings pass="windowsPE">
+
+<component name="Microsoft-Windows-Setup" processorArchitecture="arm64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<DiskConfiguration>
+<Disk wcm:action="add">
+<DiskID>0</DiskID>
+<WillWipeDisk>true</WillWipeDisk>
+<CreatePartitions>
+<CreatePartition>
+<Order>1</Order>
+<Type>Primary</Type>
+<Size>300</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>2</Order>
+<Type>EFI</Type>
+<Size>300</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>3</Order>
+<Type>MSR</Type>
+<Size>128</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>4</Order>
+<Type>Primary</Type>
+<Extend>true</Extend>
+</CreatePartition>
+</CreatePartitions>
+<ModifyPartitions>
+<ModifyPartition>
+<Order>1</Order>
+<PartitionID>1</PartitionID>
+<Format>NTFS</Format>
+<Label></Label>
+<TypeID>de94bba4-06d1-4d40-a16a-bfd50179d6ac</TypeID>
+</ModifyPartition>
+<ModifyPartition>
+<Order>2</Order>
+<PartitionID>2</PartitionID>
+<Format>FAT32</Format>
+<Label></Label>
+</ModifyPartition>
+<ModifyPartition>
+<Order>3</Order>
+<PartitionID>4</PartitionID>
+<Label></Label>
+<Letter>C</Letter>
+<Format>NTFS</Format>
+</ModifyPartition>
+</ModifyPartitions>
+</Disk>
+<WillShowUI>OnError</WillShowUI>
+</DiskConfiguration>
+<ComplianceCheck>
+<DisplayReport>Never</DisplayReport>
+</ComplianceCheck>
+<RunSynchronous>
+<RunSynchronousCommand wcm:action="add">
+<Description>Execute pe.bat</Description>
+<Order>1</Order>
+<Path>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\setup\pe.bat %I:\setup\pe.bat"</Path>
+</RunSynchronousCommand>
+</RunSynchronous>
+<UserData>
+<ProductKey>
+<Key></Key>
+<WillShowUI>OnError</WillShowUI>
+</ProductKey>
+<AcceptEula>true</AcceptEula>
+<FullName>OseasyVM</FullName>
+<Organization></Organization>
+</UserData>
+<ImageInstall>
+<OSImage>
+<InstallFrom>
+<MetaData wcm:action="add">
+<Key>/IMAGE/INDEX</Key>
+<Value>1</Value>
+</MetaData>
+</InstallFrom>
+<InstallTo>
+<DiskID>0</DiskID>
+<PartitionID>4</PartitionID>
+</InstallTo>
+<WillShowUI>OnError</WillShowUI>
+<InstallToAvailablePartition>false</InstallToAvailablePartition>
+</OSImage>
+</ImageInstall>
+</component>
+
+<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="arm64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SetupUILanguage>
+<UILanguage>zh-CN</UILanguage>
+</SetupUILanguage>
+<InputLocale>zh-CN</InputLocale>
+<SystemLocale>zh-CN</SystemLocale>
+<UILanguage>zh-CN</UILanguage>
+<UserLocale>zh-CN</UserLocale>
+</component>
+
+<component name="Microsoft-Windows-PnpCustomizationsWinPE" processorArchitecture="arm64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DriverPaths>
+    <PathAndCredentials wcm:keyValue="1" wcm:action="add">
+      <Path>%WINDIR%\Temp\</Path>
+    </PathAndCredentials>
+  </DriverPaths>
+</component>
+
+</settings>
+
+<settings pass="specialize">
+
+<component name="Microsoft-Windows-Deployment" processorArchitecture="arm64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<RunSynchronous>
+<RunSynchronousCommand wcm:action="add">
+<Description>mkdir before Execute specialize.bat</Description>
+<Order>1</Order>
+<Path>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\setup\specialize.bat %I:\setup\specialize.bat"</Path>
+</RunSynchronousCommand>
+</RunSynchronous>
+</component>
+
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="arm64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<TimeZone>China Standard Time</TimeZone>
+</component>
+
+<component name="Microsoft-Windows-SQMAPI" processorArchitecture="arm64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<CEIPEnabled>0</CEIPEnabled>
+</component>
+
+</settings>
+
+<settings pass="oobeSystem">
+
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="arm64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OOBE>
+<HideEULAPage>true</HideEULAPage>
+<ProtectYourPC>3</ProtectYourPC>
+<SkipMachineOOBE>true</SkipMachineOOBE>
+<SkipUserOOBE>true</SkipUserOOBE>
+</OOBE>
+<AutoLogon>
+<Password>
+<Value></Value>
+<PlainText>true</PlainText>
+</Password>
+<LogonCount>1</LogonCount>
+<Enabled>true</Enabled>
+<Username>OseasyVM</Username>
+</AutoLogon>
+<Display>
+<ColorDepth>32</ColorDepth>
+<DPI>120</DPI>
+<HorizontalResolution>1920</HorizontalResolution>
+<RefreshRate>60</RefreshRate>
+<VerticalResolution>1280</VerticalResolution>
+</Display>
+<Themes>
+<ThemeName>img19 Theme</ThemeName>
+<DesktopBackground>%WINDIR%\Web\Wallpaper\Windows\img19.jpg</DesktopBackground> 
+</Themes>
+<UserAccounts>
+<AdministratorPassword>
+<Value></Value>
+<PlainText>true</PlainText>
+</AdministratorPassword>
+<LocalAccounts>
+<LocalAccount wcm:action="add">
+<Password>
+<Value></Value>
+<PlainText>true</PlainText>
+</Password>
+<Description></Description>
+<DisplayName></DisplayName>
+<Group>Administrators</Group>
+<Name>OseasyVM</Name>
+</LocalAccount>
+</LocalAccounts>
+</UserAccounts>
+<FirstLogonCommands>
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\setup\oobe.bat %I:\setup\oobe.bat"</CommandLine>
+<Description>Execute oobe.bat</Description>
+<Order>1</Order>
+</SynchronousCommand>
+</FirstLogonCommands>
+</component>
+
+<component name="Microsoft-Windows-International-Core" processorArchitecture="arm64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+<InputLocale>007f:00000804</InputLocale>
+<SystemLocale>zh-CN</SystemLocale>
+<UILanguage>zh-CN</UILanguage>
+<UserLocale>zh-CN</UserLocale>
+</component>
+</settings>
+
+</unattend>

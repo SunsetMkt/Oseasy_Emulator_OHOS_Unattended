@@ -1,0 +1,654 @@
+{
+  "config": {
+    "version": "0.11.193",
+    "SoftWareList": [
+      {
+        "SID": "1",
+        "SName": "firefox",
+        "Pattern": "Firefox( |-).*\\.exe",
+        "SDescription": "火狐浏览器",
+        "Process": [
+          "firefox.exe",
+          "download.exe"
+        ],
+        "Folder": []
+      },
+      {
+        "SID": "2",
+        "SName": "Quark",
+        "Pattern": "Quark(CloudDrive){0,1}_v[0-9]+\\.[0-9]+\\.[0-9]+.*\\.exe",
+        "SDescription": "夸克网盘",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_APPDATA%\\quark-cloud-drive",
+          "%CSIDL_LOCAL_APPDATA%\\Programs\\quark-cloud-drive",
+          "%CSIDL_LOCAL_APPDATA%\\Programs\\Common"
+        ]
+      },
+      {
+        "SID": "3",
+        "SName": "CADReader",
+        "Pattern": "CADReaderPc(\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)*\\.exe",
+        "SDescription": "CAD快速看图",
+        "Process": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\*\\CADReaderPc*.tmp"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\is*tmp",
+          "%CSIDL_PROGRAM_FILESX86%\\CADReader"
+        ]
+      },
+      {
+        "SID": "4",
+        "SName": "Adobe Arcobat Reader DC",
+        "Pattern": "adobe_setup.exe",
+        "SDescription": "Adobe Arcobat Reader DC",
+        "Process": [],
+        "Folder": []
+      },
+      {
+        "SID": "5",
+        "SName": "7-zip",
+        "Pattern": "7z.*.exe",
+        "SDescription": "7-zip",
+        "Process": [],
+        "Folder": []
+      },
+      {
+        "SID": "6",
+        "SName": "Everything",
+        "Pattern": "Everything-[0-9]+\\.[0-9]+\\.[0-9]+.*\\.exe",
+        "SDescription": "Everything",
+        "Process": [],
+        "Folder": []
+      },
+      {
+        "SID": "7",
+        "SName": "EVCapture",
+        "Pattern": "EVCapture_v[0-9]+\\.[0-9]+\\.[0-9]+\\.exe",
+        "SDescription": "EV 录屏",
+        "Process": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\is*tmp\\EVCapture_v*.tmp",
+          "netsh.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\is*.tmp",
+          "%CSIDL_LOCAL_APPDATA%\\EVCapture64"
+        ]
+      },
+      {
+        "SID": "8",
+        "SName": "ToDesk",
+        "Pattern": "ToDesk((_Setup)|(\\.\\d){4})\\.exe",
+        "SDescription": "To Desk",
+        "Process": [
+          "netsh.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\nsi*.tmp",
+          "%CSIDL_PROGRAM_FILESX86%\\ToDesk"
+        ]
+      },
+      {
+        "SID": "9",
+        "Pattern": "(sogou_pinyin|搜狗输入法)_.*[0-9]+\\.[0-9]+.*\\.exe",
+        "SName": "sugou input",
+        "SDescription": "搜狗输入法",
+        "Process": [
+          "SGTool.exe",
+          "SogouComMgr.exe",
+          "biz_helper.exe",
+          "pdfsdk.exe",
+          "SogouImeBroker.exe",
+          "SogouSvc.exe",
+          "SGIGuideHelper.exe",
+          "menuexinstaller.exe",
+          "SGBizLauncher.exe",
+          "xtac.exe",
+          "xtac64.exe",
+          "userNetSchedule.exe",
+          "Install64_ARM.exe"
+        ],
+        "Folder": [
+          "%CSIDL_PROGRAM_FILESX86%\\SogouInput",
+          "%CSIDL_COMMON_APPDATA%\\SogouInput",
+          "%CSIDL_COMMON_APPDATA%\\SGAIAssistant",
+          "%CSIDL_LOCAL_APPDATA%\\Temp",
+          "%CSIDL_LOCALLOW_APPDATA%\\SogouPY"
+        ]
+      },
+      {
+        "SID": "10",
+        "SName": "seewo",
+        "Pattern": "(xwbb|EasiNoteSetup_)[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+(_seewo)?\\.exe",
+        "SDescription": "希沃白板",
+        "Process": [
+          "seewo.exe",
+          "netsh.exe",
+          "seewoupdate.exe"
+        ],
+        "Folder": [
+          "%CSIDL_COMMON_APPDATA%\\Seewo"
+        ]
+      },
+      {
+        "SID": "11",
+        "SName": "wechat",
+        "Pattern": "weChat(dnrj-|setup).*\\.exe",
+        "SDescription": "微信",
+        "Process": [
+          "weChatSetup.exe"
+        ],
+        "Folder": [
+          "%CSIDL_PROGRAM_FILES%\\Tencent\\WeChat",
+          "%CSIDL_COMMON_APPDATA%\\Tencent\\WeChat",
+          "%CSIDL_APPDATA%\\Tencent",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp"
+        ]
+      },
+      {
+        "SID": "12",
+        "SName": "douyin",
+        "Pattern": "douyin-downloader.exe",
+        "SDescription": "douyin",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_PROGRAM_FILESX86%\\ByteDance"
+        ]
+      },
+      {
+        "SID": "13",
+        "SName": "Photoshop",
+        "Pattern": "Set-up\\.exe",
+        "SDescription": "Photoshop",
+        "Process": [
+          "AdobeIPCBrokerCustomHook.exe",
+          "TokenResolverx64.exe",
+          "PhotoshopPrefsManager.exe"
+        ],
+        "Folder": [
+          "%CSIDL_COMMON_APPDATA%\\Adobe",
+          "%CSIDL_LOCAL_APPDATA%\\Adobe",
+          "%CSIDL_APPDATA%\\Adobe",
+          "%CSIDL_PROGRAM_FILES%\\Common Files\\Adobe",
+          "%CSIDL_PROGRAM_FILES%\\Adobe"
+        ]
+      },
+      {
+        "SID": "14",
+        "SName": "Xmind",
+        "Pattern": "xmind-for-Windows-x64bit.*\\.exe",
+        "SDescription": "Xmind",
+        "Process": [
+          "xtac.exe",
+          "cmd.exe",
+          "conhost.exe",
+          "regsvr32.exe",
+          "find.exe",
+          "tasklist.exe",
+          "taskhostw.exe"
+        ],
+        "Folder": [
+          "%CSIDL_APPDATA%\\Xmind",
+          "%CSIDL_LOCAL_APPDATA%\\Programs\\Xmind",
+          "%CSIDL_LOCAL_APPDATA%\\Programs\\Common"
+        ]
+      },
+      {
+        "SID": "15",
+        "SName": "YouDao",
+        "Pattern": "(ydnote|(ydybj|有道云笔记)-.*)\\.exe",
+        "SDescription": "有道云笔记",
+        "Process": [
+          "conhost.exe",
+          "WmiPrvSE.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\ynote-desktop-updater"
+        ]
+      },
+      {
+        "SID": "16",
+        "SName": "Aliyun",
+        "Pattern": "aDrive-[0-9]+\\.[0-9]+\\.[0-9]+.*\\.exe",
+        "SDescription": "阿里云盘",
+        "Process": [
+          "conhost.exe",
+          "WmiPrvSE.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp"
+        ]
+      },
+      {
+        "SID": "17",
+        "SName": "JGPDF",
+        "Pattern": "JG(.*)PDF.*\\.exe",
+        "SDescription": "极光PDF",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp"
+        ]
+      },
+      {
+        "SID": "18",
+        "SName": "AutoCAD",
+        "Pattern": "CADSetup.exe",
+        "Process": [
+          "installler.exe",
+          "Autodesk Access UI Host.exe",
+          "DownloadManager.exe",
+          "AdODIS-installer.exe",
+          "install_manager.exe",
+          "LogAnalyzer.exe",
+          "AdskIdentityManager-Installer.exe",
+          "AdskLicensing-installer.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\odis_download_dest",
+          "%CSIDL_APPDATA%\\Autodesk",
+          "%CSIDL_COMMON_APPDATA%\\Autodesk",
+          "%CSIDL_PROGRAM_FILES%\\Autodesk",
+          "%CSIDL_PROGRAM_FILES%\\Common Files\\Autodesk shared"
+        ]
+      },
+      {
+        "SID": "19",
+        "SName": "tencent Doc",
+        "Pattern": "TencentDocs-.*\\.exe",
+        "Process": [
+          "installler.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp",
+          "%CSIDL_LOCAL_APPDATA%\\Tencent",
+          "%CSIDL_APPDATA%\\Tencent",
+          "%CSIDL_APPDATA%\\TDAppDesktop"
+        ]
+      },
+      {
+        "SID": "20",
+        "SName": "万兴pdf",
+        "Pattern": "pdfelement_.*_.*.exe",
+        "SDescription": "万兴pdf",
+        "Process": [
+          "PEToolDeployment.exe",
+          "PENotify.exe",
+          "PEPreviewDeployment.exe",
+          "setup64.tmp",
+          "PEOfficeAddIn4.exe",
+          "PEShellExtension.Installer2.exe",
+          "PEShellContextMenu4.exe",
+          "WSPrtSetup.exe",
+          "PEToolDeploymentExtend.exe"
+        ],
+        "Folder": [
+          "%CSIDL_PROGRAM_FILES%\\Wondershare",
+          "%CSIDL_COMMON_APPDATA%\\Wondershare",
+          "%CSIDL_COMMON_DOCUMENTS%\\Wondershare"
+        ]
+      },
+      {
+        "SID": "21",
+        "SName": "BeyondCompare",
+        "Pattern": "BCompare-.*[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.exe",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp",
+          "%CSIDL_PROGRAM_FILES%\\BeyondCompare 5"
+        ]
+      },
+      {
+        "SID": "22",
+        "SName": "AliWorkbench",
+        "Pattern": "AliworkbenchQNDownload_\\([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\)\\.exe",
+        "SDescription": "千牛工作台-官网",
+        "Process": [],
+        "Folder": []
+      },
+      {
+        "SID": "22.1",
+        "SName": "AliWorkbench",
+        "Pattern": "qianniu_\\(.*\\).*\\.exe",
+        "SDescription": "千牛工作台-应用商店版",
+        "Process": [],
+        "Folder": []
+      },
+      {
+        "SID": "23",
+        "SName": "Foxmail",
+        "Pattern": "foxmail(setup(\\.|_))*[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.exe",
+        "SDescription": "Foxmail客户端",
+        "Process": [
+          "netsh.exe",
+          "xtac.exe"
+        ],
+        "Folder": [
+          "c:\\Foxmail.*"
+        ]
+      },
+      {
+        "SID": "24",
+        "SName": "Skype",
+        "Pattern": "SkypeSetupFull\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.exe",
+        "Process": [
+          "SkypeSetup.tmp",
+          "SkypeSetup.exe"
+        ],
+        "Folder": [
+          "%CSIDL_APPDATA%\\Skype",
+          "%CSIDL_PROGRAM_FILESX86%\\Microsoft\\Skype for Desktop",
+          "%CSIDL_COMMON_APPDATA%\\Microsoft"
+        ]
+      },
+      {
+        "SID": "25",
+        "SName": "Zoom",
+        "Pattern": "Zoom((.*installer.*)|(_v.*))\\.exe",
+        "Process": [
+          "installer.exe",
+          "zoom.exe"
+        ],
+        "Folder": [
+          "%CSIDL_APPDATA%\\Zoom\\",
+          "%CSIDL_LOCAL_APPDATA%\\Zoom\\",
+          "%CSIDL_PROGRAM_FILES%\\Zoom",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\"
+        ]
+      },
+      {
+        "SID": "26",
+        "SName": "iFlyRec",
+        "Pattern": "iflyrec_meeting_v[0-9]+\\.[0-9]+\\.[0-9]+.*\\.exe",
+        "SDescription": "讯飞视听",
+        "Process": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\is*tmp\\iflyrec_meeting*.tmp",
+          "netsh.exe",
+          "regsvr32.exe",
+          "iFlyInput.exe",
+          "iFlyPlatform.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCALLOW_APPDATA%\\iFly Info Tek",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\is*tmp\\",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\",
+          "%CSIDL_PROGRAM_FILESX86%\\iflyrecClient",
+          "%CSIDL_COMMON_APPDATA%\\iFly Info tek"
+        ]
+      },
+      {
+        "SID": "27",
+        "SName": "Yunshixun",
+        "Pattern": "yunshixun(-[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)*\\.exe",
+        "SDescription": "云视讯",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_PROGRAM_FILESX86%\\ChinaMobile",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp"
+        ]
+      },
+      {
+        "SID": "28",
+        "SName": "Welink",
+        "Pattern": "welink_setup.*\\.exe",
+        "SDescription": "Welink",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp",
+          "%CSIDL_APPDATA%\\Welink\\"
+        ]
+      },
+      {
+        "SID": "29",
+        "SName": "QQ Player",
+        "Pattern": "QQPlayerSetup.*\\.exe",
+        "Process": [
+          "statistics.exe",
+          "QPDZ.exe",
+          "regsvr32.exe",
+          "QQPlayer.exe",
+          "FileTypeAsso.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp",
+          "%CSIDL_PROGRAM_FILESX86%\\Tencent"
+        ]
+      },
+      {
+        "SID": "30",
+        "SName": "PotPlayer",
+        "Pattern": "PotPlayerSetup.*\\.exe",
+        "Process": [
+          "PotPlayerMini64.exe",
+          "DTDrop64"
+        ],
+        "Folder": [
+          "%CSIDL_PROGRAM_FILES%\\DAUM",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp"
+        ]
+      },
+      {
+        "SID": "31",
+        "SName": "QQ Browser",
+        "Pattern": "QQBrowser.+\\.exe",
+        "SDescription": "Welink",
+        "Process": [
+          "icacls.exe",
+          "QQBrowser.exe",
+          "QBPin.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp",
+          "%CSIDL_LOCAL_APPDATA%\\Tencent\\",
+          "%CSIDL_APPDATA%\\Tencent\\",
+          "%CSIDL_PROGRAM_FILESX86%\\Tencent"
+        ]
+      },
+      {
+        "SID": "32",
+        "SName": "QQ Music",
+        "Pattern": "QQMusic((_Setup.*)|([0-9]+\\.[0-9]+\\.[0-9]+))\\.exe",
+        "Process": [
+          "icacls.exe",
+          "QQMusic.exe",
+          "QBPin.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp",
+          "%CSIDL_LOCAL_APPDATA%\\Tencent\\",
+          "%CSIDL_APPDATA%\\Tencent\\",
+          "%CSIDL_PROGRAM_FILESX86%\\Tencent"
+        ]
+      },
+      {
+        "SID": "33",
+        "SName": "BaoFeng",
+        "Pattern": "bf5_new.*\\.exe",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp",
+          "%CSIDL_COMMON_APPDATA%\\Baofeng",
+          "%CSIDL_APPDATA%\\baofeng"
+        ]
+      },
+      {
+        "SID": "34",
+        "SName": "NeteaseCloudMusic",
+        "Pattern": "NeteaseCloudMusic.*\\.exe",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp",
+          "%CSIDL_LOCAL_APPDATA%\\NetEase",
+          "%CSIDL_COMMON_APPDATA%\\NetEase",
+          "%CSIDL_APPDATA%\\NetEase",
+          "%CSIDL_PROGRAM_FILES%\\NetEase"
+        ]
+      },
+      {
+        "SID": "35",
+        "SName": "iFlyIME",
+        "Pattern": "iFlyIME_Setup(\\.\\d+){0,3}\\.exe",
+        "SDescription": "讯飞输入法",
+        "Process": [
+          "iFlyIMEInstaller.exe",
+          "netsh.exe",
+          "regsvr32.exe",
+          "iFlyInput.exe",
+          "iFlyPlatform.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCALLOW_APPDATA%\\iFly Info Tek",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\",
+          "%CSIDL_PROGRAM_FILESX86%\\iFlytek",
+          "%CSIDL_COMMON_APPDATA%\\iFly Info tek"
+        ]
+      },
+      {
+        "SID": "36",
+        "SName": "eudic",
+        "Pattern": "eudic_win.*\\.exe",
+        "SDescription": "欧路词典",
+        "Process": [
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\"
+        ]
+      },
+      {
+        "SID": "37",
+        "SName": "PDD",
+        "Pattern": "((拼多多商家工作台)|(PddSetup))_V[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+.*\\.exe",
+        "SDescription": "拼多多工作台",
+        "Process": [
+          "CmdHelper.exe",
+          "GetWinConfigEx.exe"
+        ],
+        "Folder": [
+          "C:\\Users\\Public\\Documents\\PDD",
+          "%CSIDL_PROGRAM_FILESX86%\\PDD"
+        ]
+      },
+      {
+        "SID": "38",
+        "SName": "BaiduPinyin",
+        "Pattern": "BaiduPinyin((Setup\\.)|(_v))[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.exe",
+        "SDescription": "百度拼音输入法",
+        "Process": [
+          "imetoolx64.exe",
+          "BDDownloadExe.exe",
+          "dictbuilder.exe",
+          "imeutil.exe",
+          "pc_flutter.exe"
+        ],
+        "Folder": [
+          "%CSIDL_COMMON_APPDATA%\\Baidu",
+          "%CSIDL_LOCAL_APPDATA%\\Baidu",
+          "%CSIDL_APPDATA%\\Baidu"
+        ]
+      },
+      {
+        "SID": "39",
+        "SName": "Zhiyun",
+        "Pattern": "ZhiyunTrans.+\\.exe",
+        "SDescription": "知云翻译",
+        "Process": [],
+        "Folder": []
+      },
+      {
+        "SID": "40",
+        "SName": "PowerWord",
+        "Pattern": "PowerWord\\.([0-9]+\\.)+exe",
+        "SDescription": "金山词霸",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Kingsoft"
+        ]
+      },
+      {
+        "SID": "41",
+        "SName": "TextSeek",
+        "Pattern": "TextSeek_setup.*\\.exe",
+        "Process": [],
+        "Folder": [
+          "%CSIDL_PROGRAM_FILESX86%\\TextSeek",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp"
+        ]
+      },
+      {
+        "SID": "42",
+        "SName": "EasyConnect",
+        "Pattern": "EasyConnectInstaller((\\.)|(_v))(\\d+\\.)+exe",
+        "Process": [
+          "EasyConnectInstallerRaw.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp",
+          "%CSIDL_APPDATA%\\Sangfor",
+          "%CSIDL_PROGRAM_FILESX86%\\Sangfor"
+        ]
+      },
+      {
+        "SID": "43",
+        "SName": "Putty",
+        "Pattern": "putty-.*-installer\\.((msi)|(exe))",
+        "SDescription": "Putty",
+        "Process": [],
+        "Folder": []
+      },
+      {
+        "SID": "44",
+        "SName": "Teams",
+        "Pattern": "MSTeamsSetup.*\\.exe",
+        "SDescription": "Microsoft Teams",
+        "Process": [],
+        "Folder": []
+      },
+      {
+        "SID": "Extra-1",
+        "SName": "BattleNet",
+        "Pattern": "Battle.net-Setup\\..*\\.exe",
+        "Process": [
+          "xtac.exe",
+          "Agent.exe",
+          "AgentHelper.exe",
+          "Battle.net.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Battle.net"
+        ]
+      },
+      {
+        "SID": "Extra-2",
+        "SName": "TencentMeeting",
+        "Pattern": "TencentMeeting_.*\\.exe",
+        "Process": [
+          "xtac.exe",
+          "xtac64.exe",
+          "WeMeetApp.exe"
+        ],
+        "Folder": [
+          "%CSIDL_APPDATA%\\Tencent",
+          "%CSIDL_LOCAL_APPDATA%\\Tencent",
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp"
+        ]
+      },
+      {
+        "SID": "Extra-3",
+        "SName": "KugouMusic",
+        "Pattern": "kugou_release_.*\\.exe",
+        "Process": [
+          "7zr.exe",
+          "openurl.exe",
+          "dataimporter.exe",
+          "KuGou.exe",
+          "regsvr32.exe"
+        ],
+        "Folder": [
+          "%CSIDL_LOCAL_APPDATA%\\Temp\\n*.tmp",
+          "%CSIDL_APPDATA%\\KuGou8",
+          "%CSIDL_PROGRAM_FILESX86%\\KuGou\\KGMusic"
+        ]
+      }
+    ]
+  }
+}
